@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_game"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gamebackground"
+    tools:context="com.example.administrator.trieuphu.GameActivity">
+<TextView
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:background="@drawable/custom_circle"
+    android:id="@+id/tvTime"
+    android:layout_centerHorizontal="true"
+    android:alpha="0.9"
+    android:text="30"
+    android:paddingTop="35dp"
+    android:textSize="60dp"
+    android:textStyle="bold"
+    android:paddingLeft="42dp"
+
+    />
+<ImageView
+    android:layout_width="80dp"
+    android:layout_height="80dp"
+    android:src="@drawable/p5050"
+    android:foregroundGravity="left"
+    android:layout_marginLeft="150dp"
+    android:id="@+id/btnP50"
+    />
+   <ImageView
+       android:layout_width="80dp"
+       android:layout_height="80dp"
+       android:src="@drawable/call"
+       android:foregroundGravity="left"
+       android:layout_marginLeft="250dp"
+       android:id="@+id/btnCall"
+       />
+   <ImageView
+       android:layout_width="80dp"
+       android:layout_height="80dp"
+       android:src="@drawable/people"
+       android:foregroundGravity="left"
+       android:layout_marginLeft="50dp"
+       android:id="@+id/btnPeople"
+       />
+
+   <TextView
+       android:layout_width="650dp"
+       android:layout_height="120dp"
+      android:layout_marginTop="40dp"
+       android:layout_centerHorizontal="false"
+       android:alpha="0.6"
+       android:layout_below="@id/tvTime"
+       android:background="@drawable/custom_question"
+       android:id="@+id/tvQuest"
+       android:text="Câu 1\nNhất Lu nhì ai ?"
+       android:textColor="#FFFF"
+       android:paddingTop="10dp"
+       android:paddingLeft="10dp"
+       android:textSize="40dp"
+       />
+   <TextView
+       android:layout_width="300dp"
+       android:layout_height="60dp"
+       android:layout_marginTop="15dp"
+       android:layout_alignLeft="@id/tvQuest"
+       android:layout_centerHorizontal="true"
+       android:alpha="0.8"
+       android:layout_below="@id/tvQuest"
+       android:id="@+id/ansA"
+       android:background="@drawable/custom_question"
+       android:text="A Bác Hồ"
+       android:textColor="#FFFF"
+       android:paddingTop="8dp"
+       android:paddingLeft="10dp"
+       android:textSize="40dp"
+       />
+   <TextView
+       android:layout_width="300dp"
+       android:layout_height="60dp"
+       android:layout_marginTop="15dp"
+       android:layout_alignLeft="@id/tvQuest"
+       android:layout_centerHorizontal="true"
+       android:alpha="0.8"
+       android:layout_below="@id/ansA"
+       android:id="@+id/ansC"
+       android:background="@drawable/custom_question"
+       android:text="C Bắc"
+       android:textColor="#FFFF"
+       android:paddingTop="8dp"
+       android:paddingLeft="10dp"
+       android:textSize="40dp"
+       />
+   <TextView
+       android:layout_width="300dp"
+       android:layout_height="60dp"
+       android:layout_marginTop="15dp"
+       android:layout_alignRight="@id/tvQuest"
+       android:layout_centerHorizontal="true"
+       android:alpha="0.8"
+       android:layout_below="@id/tvQuest"
+       android:id="@+id/ansB"
+       android:background="@drawable/custom_question"
+       android:text="B Misa"
+       android:textColor="#FFFF"
+       android:paddingTop="8dp"
+       android:paddingLeft="10dp"
+       android:textSize="40dp"
+       />
+   <TextView
+       android:layout_width="300dp"
+       android:layout_height="60dp"
+       android:layout_marginTop="15dp"
+       android:layout_alignRight="@id/tvQuest"
+       android:layout_centerHorizontal="true"
+       android:alpha="0.8"
+       android:layout_below="@id/ansB"
+       android:id="@+id/ansD"
+       android:background="@drawable/custom_question"
+       android:text="D Miso"
+       android:textColor="#FFFF"
+       android:paddingTop="8dp"
+       android:paddingLeft="10dp"
+       android:textSize="40dp"
+       />
+
+   <ListView
+       android:layout_marginTop="20dp"
+       android:layout_width="200dp"
+       android:layout_height="match_parent"
+       android:id="@+id/listQuest"
+       android:dividerHeight="0dp"
+       android:layout_alignParentTop="true"
+       android:layout_alignParentRight="true"
+       android:layout_alignParentEnd="true"
+
+       />
+
+</RelativeLayout>
