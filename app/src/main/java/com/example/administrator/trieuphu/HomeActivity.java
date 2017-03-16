@@ -34,8 +34,12 @@ public class HomeActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onResume() {
-        startService(svc);
         super.onResume();
+        if(soudImg.getDrawable().getConstantState() == getResources().getDrawable(R.drawable.speak).getConstantState()){
+            startService(svc);
+        }else{
+            stopService(svc);
+        }
     }
 
     @Override
