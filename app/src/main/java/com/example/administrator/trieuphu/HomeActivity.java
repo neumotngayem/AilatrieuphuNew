@@ -59,6 +59,8 @@ public class HomeActivity extends Activity implements View.OnClickListener {
                 break;
             }
             case R.id.btnScore:{
+                Intent intent = new Intent(this,ScoreActivity.class);
+                startActivity(intent);
                 break;
             }
             case R.id.btnExit:{

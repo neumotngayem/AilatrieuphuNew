@@ -16,12 +16,12 @@ import java.util.List;
  * Created by Administrator on 3/2/2017.
  */
 
-public class ListViewAdapter extends BaseAdapter {
+public class ListScoreAdapter extends BaseAdapter {
     private LayoutInflater  inflater;
     private List<ArrayList<String>> list;
     private  ArrayList<String> model;
 
-    public ListViewAdapter(Context context, List<ArrayList<String>> list) {
+    public ListScoreAdapter(Context context, List<ArrayList<String>> list) {
         if(list!=null){
             this.list = list;
         }else{
@@ -47,25 +47,17 @@ public class ListViewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = inflater.inflate(R.layout.list_quest,parent,false);
+        View view = inflater.inflate(R.layout.list_score,parent,false);
         if(view!=null){
             model=list.get(position);
             if(model!=null) {
-                TextView txtQNum = (TextView) view.findViewById(R.id.txtQuestNum);
-                TextView txtMoney = (TextView) view.findViewById(R.id.txtMoney);
+                TextView txtQNum = (TextView) view.findViewById(R.id.txtNumScore);
+                TextView txtMoney = (TextView) view.findViewById(R.id.txtScore);
                 txtQNum.setText(String.valueOf(model.get(0)));
                 txtMoney.setText(String.valueOf(model.get(1)));
             }
         }
-        LinearLayout ActiveItem = (LinearLayout) view;
-        if (position == selectedItem){
-            ActiveItem.setBackgroundResource(R.drawable.custom_tv_select);
-            // for focus on it
-            int top = (ActiveItem == null) ? 0 : ActiveItem.getTop();
-            ((ListView) parent).setSelectionFromTop(position, top);
-        }else{
-           ActiveItem.setBackgroundResource(R.drawable.custom_tv_quest);
-        }
+
 
         return view;
     }

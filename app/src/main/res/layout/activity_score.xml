@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_score"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@drawable/background"
+    tools:context="com.example.administrator.trieuphu.ScoreActivity">
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="HIGH SCORE"
+    android:textSize="80dp"
+    android:gravity="center_horizontal"
+    android:textStyle="bold"
+    android:textColor="#F5F5F5"
+    android:id="@+id/tvHigh"
+    />
+    <ListView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listScore"
+        android:divider="#757575"
+        android:dividerHeight="3dp"
+        android:layout_below="@id/tvHigh"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/custom_tv_score"
+
+    />
+</RelativeLayout>
