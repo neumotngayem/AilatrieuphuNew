@@ -3,12 +3,18 @@ package com.example.administrator.trieuphu;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.app.Activity;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.plattysoft.leonids.ParticleSystem;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,7 +25,7 @@ public class GameActivity extends Activity implements View.OnClickListener {
     ListView listViewQuest;
     ListViewAdapter adapter;
     TextView btnAnswerA,btnAnswerB,btnAnswerC,btnAnswerD,tvQuest;
-
+    Dialog dialogSure;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +52,13 @@ public class GameActivity extends Activity implements View.OnClickListener {
         btnAnswerB.setOnClickListener(this);
         btnAnswerC.setOnClickListener(this);
         btnAnswerD.setOnClickListener(this);
-
+        dialogSure = new Dialog(this);
+        dialogSure.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialogSure.setContentView(R.layout.custom_dialog_sure);
+        Button btnSure = (Button) dialogSure.findViewById(R.id.btnSure);
+        Button btnNotSure = (Button) dialogSure.findViewById(R.id.btnNotSure);
+        btnSure.setOnClickListener(this);
+        btnNotSure.setOnClickListener(this);
 
     }
 
@@ -68,8 +80,28 @@ public class GameActivity extends Activity implements View.OnClickListener {
 
                 break;
             }
-
+            case R.id.ansC:{
+                initFirework();
+                break;
+            }
+            case R.id.ansD:{
+                dialogSure.show();
+                break;
+            }
+            case R.id.btnSure:{
+                Toast.makeText(this,"Next question",Toast.LENGTH_SHORT).show();
+                break;
+            }
+            case R.id.btnNotSure:{
+               dialogSure.cancel();
+                break;
+            }
         }
+    }
+    void initFirework(){
+        ParticleSystem ps = new ParticleSystem(this,1000,R.drawable.star_pink,1000);
+        ps.setSpeedRange(0.2f, 0.5f);
+        ps.oneShot(findViewById(R.id.ansC), 100);
     }
     void removeQuestList(){
         //animator dich ra

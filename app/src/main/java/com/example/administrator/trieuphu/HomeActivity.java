@@ -1,6 +1,7 @@
 package com.example.administrator.trieuphu;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
@@ -17,6 +18,7 @@ public class HomeActivity extends Activity implements View.OnClickListener {
     Intent svc;
     Button btnStart,btnHighScore,btnExit;
     ImageView soudImg;
+    Dialog dialogReady;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,13 @@ public class HomeActivity extends Activity implements View.OnClickListener {
         btnHighScore.setOnClickListener(this);
         btnExit.setOnClickListener(this);
         soudImg.setOnClickListener(this);
+        dialogReady = new Dialog(this);
+        dialogReady.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialogReady.setContentView(R.layout.custom_dialog_ready);
+        Button btnReady = (Button) dialogReady.findViewById(R.id.btnReady);
+        Button btnNotReady = (Button) dialogReady.findViewById(R.id.btnNotReady);
+        btnReady.setOnClickListener(this);
+        btnNotReady.setOnClickListener(this);
     }
 
     @Override
@@ -54,8 +63,16 @@ public class HomeActivity extends Activity implements View.OnClickListener {
         int id = v.getId();
         switch (id){
             case R.id.btnStart:{
-                Intent intent = new Intent(this,GameActivity.class);
-                startActivity(intent);
+                dialogReady.show();
+                break;
+            }
+            case R.id.btnReady: {
+                  Intent intent = new Intent(this,GameActivity.class);
+                  startActivity(intent);
+                break;
+            }
+            case R.id.btnNotReady:{
+                dialogReady.cancel();
                 break;
             }
             case R.id.btnScore:{
